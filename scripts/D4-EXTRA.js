@@ -147,6 +147,8 @@ const loopUntil = function (num) {
       if (randomNumber > num) {
         index += 1
         console.log("index", index)
+      } else {
+        index = 0
       }
     }
   }
