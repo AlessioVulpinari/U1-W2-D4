@@ -186,6 +186,23 @@ console.log(average(array))
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const longest = function (array = []) {
+  longLenght = 0
+  longString = ""
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] === "string") {
+      if (array[i].length > longLenght) {
+        longLenght = array[i].length
+        longString = array[i]
+      }
+    }
+  }
+  return longString
+}
+
+const array2 = [10, "Pippo", "Tommaso", true, "Cristiano"]
+console.log(longest(array2))
+
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
  La funzione deve ritornare true se "emailContent" non contiene le parole "SPAM" o "SCAM".
