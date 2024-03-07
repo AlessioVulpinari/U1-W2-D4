@@ -120,6 +120,9 @@ const check3and7 = function (n) {
   }
 }
 
+console.log("Questo numero è divisibile per 3 o 7:", check3and7(14))
+console.log("Questo numero è divisibile per 3 o 7:", check3and7(5))
+
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 7
@@ -128,12 +131,47 @@ const check3and7 = function (n) {
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const reverseString = function (string) {
+  arrayOfLetters = []
+  stringReversed = ""
+
+  arrayOfLetters = string.split("")
+
+  arrayOfLetters = arrayOfLetters.reverse()
+  stringReversed = arrayOfLetters.join("")
+
+  return stringReversed
+}
+
+console.log("Rovesciamo la parola Ciao:", reverseString("Ciao"))
+
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const upperFirst = function (string) {
+  arrayOfWords = []
+  arrayOfWords = string.split(" ")
+  console.log(arrayOfWords)
+  // console.log(arrayOfWords.length)
+
+  for (let i = 0; i < arrayOfWords.length; i++) {
+    arrayOfLetters = arrayOfWords[i].split("")
+    // console.log(arrayOfLetters)
+    let firstLetter = arrayOfLetters[0].toUpperCase()
+    arrayOfLetters.splice(0, 1, firstLetter)
+    arrayOfWords[i] = arrayOfLetters.join("")
+    // console.log(arrayOfWords[i])
+  }
+  string = arrayOfWords.join(" ")
+  // console.log(string)
+  return string
+}
+
+console.log(upperFirst("Programmare è bellissimo"))
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
@@ -142,8 +180,32 @@ const check3and7 = function (n) {
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const cutString = function (string) {
+  array = string.split("")
+  array.splice(array.length - 1, 1)
+  array.splice(0, 1)
+  let newString = array.join("")
+
+  return newString
+}
+
+console.log(cutString("Ade"))
+
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const giveMeRandom = function (n) {
+  const arrayOfRandomNumber = []
+
+  for (let i = 0; i < n; i++) {
+    randomNumber = Math.floor(Math.random() * 11)
+    console.log(randomNumber)
+    arrayOfRandomNumber.push(randomNumber)
+  }
+  return arrayOfRandomNumber
+}
+
+console.log(giveMeRandom(10))
